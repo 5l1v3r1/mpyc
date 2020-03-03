@@ -488,7 +488,7 @@ class Runtime:
         if issubclass(stype, sectypes.SecureFiniteField):
             for i in range(len(x)):
                 x[i] = self._mod(ttype(x[i]), stype.field.modulus)
-        if d > 0:
+        elif d > 0:
             for i in range(len(x)):
                 x[i] <<= d
         return x
